@@ -1,4 +1,7 @@
-sudo apt update && sudo apt install nodejs npm
+#Download and install latest version of node to resolve npm errors.
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+
+sudo apt-get install nodejs -y
 
 #install pm2
 sudo npm install -g pm2
