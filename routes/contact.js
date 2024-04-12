@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 
-/* GET home page. */
+/* GET contact page. */
 router.get('/', function(req, res, next) {
-  res.render('delete', { title: "Delete User Page." });
+  res.render('contact', { title: "Contact Us!" });
 });
 
 
