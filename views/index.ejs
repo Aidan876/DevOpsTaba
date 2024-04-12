@@ -5,18 +5,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-      <h1>TODO List</h1>
-      <div class="add-todo">
-          <form action="/add" method="post">
-              <input type="text" name="todo" placeholder="Add new TODO">
-              <button type="submit">Add</button>
-          </form>
-      </div>
-      <ul>
-          <% todos.forEach(function(todo) { %>
-              <li><%= todo %></li>
-          <% }); %>
-      </ul>
-  </html>
+    <a href="/add">Add Employee</a>
+    <a href="/view">View Employee</a>
+    <a href="/edit">Edit Employee</a>
+    <a href="/delete">Delete Employee</a>
+    <header><%= title %></header>
+    <section>Please Select Option Below!</section>
+    <nav>
+      <li>Create Employee</li>
+      <li>View Employees</li>
+      <li>Edit Employees</li>
+      <li>Delete Employees</li>
+    </nav>
   </body>
 </html>
