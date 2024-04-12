@@ -7,7 +7,7 @@ pm2 stop DevOpsTaba
 #change directory
 cd DevOpsTaba/
 #install app
-npm install -g npm@latest
+npm install
 echo $PRIVATE_KEY > privatekey.pem
 echo $SERVER > server.crt
 #start app
