@@ -1,52 +1,52 @@
-
-.wrapper {
-  width: 960px;
-  margin: 0 auto;
-}
-
-header {
-	width: 960px;
-}
-
-nav, section {
-  float: left;
-}
-
-nav {
-  width: 200px;
-  margin-right: 10px;
-}
-
-section {
-  width: 750px;
-}
-
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+/* Reset default margin and padding */
+* {
+    padding: 50;
+    box-sizing: border-box;
 }
 
 body {
-  background: #2980b9;
-  color: #FFF;
-  font-family: Helvetica;
-  text-align: center;
-  margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
 }
 
-header,
-nav,
-section {
-  border: 1px solid rgba(255,255,255,0.8);
-  margin-bottom: 10px;
-  border-radius: 3px;
+h1 {
+    margin-bottom: 20px;
 }
 
-header {
-  padding: 20px 0;
+form {
+    margin-bottom: 20px;
 }
 
-nav, section {
-  padding: 200px 0;
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 5px;
 }

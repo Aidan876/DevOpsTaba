@@ -1,18 +1,63 @@
 <!DOCTYPE html>
+<html lang="en"></html>
 <html>
   <head>
     <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <a href="/contact">Contact Us</a>
     <header><%= title %></header>
-    <section>Please Enter details below!</section>
-    <nav>
-      <li>Create Post</li>
-      <li>View Posts</li>
-      <li>Contact Us</li>
-      <li>About Us</li>
-    </nav>
+    <section>Please Enter Employee Details Below!</section>
+
+    <!-- Form for adding new employee -->
+    <form id="addEmployeeForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Add Employee</button>
+    </form>
+
+    <!-- Employee List -->
+    <ul id="employeeList"></ul>
+
+    <script>
+      // Function to add a new employee
+      function addEmployee(name, email) {
+          const employee = { name, email };
+          const employees = JSON.parse(localStorage.getItem('employees')) || [];
+          employees.push(employee);
+          localStorage.setItem('employees', JSON.stringify(employees));
+          displayEmployees();
+      }
+
+      // Function to display employees
+      function displayEmployees() {
+            const employees = JSON.parse(localStorage.getItem('employees')) || [];
+            const employeeList = document.getElementById('employeeList');
+            employeeList.innerHTML = ''; // Clear previous list
+            employees.forEach((employee, index) => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `${index + 1}. ${employee.name} - ${employee.email}`;
+                employeeList.appendChild(listItem);
+            });
+        }
+
+        // Event listener for form submission
+        document.getElementById('addEmployeeForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            addEmployee(name, email);
+            this.reset(); // Reset form fields
+        });
+
+        // Display employees when the page loads
+        displayEmployees();
+    </script>
+
   </body>
 </html>
